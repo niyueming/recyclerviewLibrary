@@ -113,9 +113,4 @@ public abstract class EndlessRecyclerOnScrollListener extends RecyclerView.OnScr
 
     public abstract void onLoadNextPage(final View view) ;
 
-    public static enum LayoutManagerType {
-        LinearLayout,
-        StaggeredGridLayout,
-        GridLayout
-    }
 }
