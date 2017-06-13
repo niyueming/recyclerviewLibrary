@@ -74,6 +74,12 @@ public abstract class BaseRecyclerAdapter<VH extends BaseRecyclerAdapter.ViewHol
 //        notifyDataSetChanged();
     }
 
+    public void onItemClick(View view, int position, long id){
+        if (mOnItemClickListener!= null){
+            mOnItemClickListener.onItemClick(view,position,id);
+        }
+    }
+
     public abstract class ViewHolder extends RecyclerView.ViewHolder{
 
         public ViewHolder(View itemView) {
