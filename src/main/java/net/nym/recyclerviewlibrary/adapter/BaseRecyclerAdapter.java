@@ -97,6 +97,14 @@ public abstract class BaseRecyclerAdapter<VH extends BaseRecyclerAdapter.ViewHol
         }
     }
 
+    public class OtherViewHolder extends RecyclerView.ViewHolder{
+
+        public OtherViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+
     public interface OnItemClickListener{
         void onItemClick(View view, int position, long id);
     }
