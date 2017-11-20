@@ -45,6 +45,16 @@ public abstract class EndlessRecyclerOnScrollListener extends RecyclerView.OnScr
      */
     private int currentScrollState = 0;
 
+    private boolean isEnd = false;
+
+    public boolean isEnd() {
+        return isEnd;
+    }
+
+    public void setEnd(boolean end) {
+        isEnd = end;
+    }
+
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
@@ -89,7 +99,7 @@ public abstract class EndlessRecyclerOnScrollListener extends RecyclerView.OnScr
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         int visibleItemCount = layoutManager.getChildCount();
         int totalItemCount = layoutManager.getItemCount();
-        if ((visibleItemCount > 0 && currentScrollState == RecyclerView.SCROLL_STATE_IDLE && (lastVisibleItemPosition) >= totalItemCount - 1)) {
+        if (!isEnd && (visibleItemCount > 0 && currentScrollState == RecyclerView.SCROLL_STATE_IDLE && (lastVisibleItemPosition) >= totalItemCount - 1)) {
             onLoadNextPage(recyclerView);
         }
     }
